@@ -12,14 +12,14 @@ $("#currentDay").text(dt.toLocaleString(luxon.DateTime.DATETIME_FULL));
 for (i=0; i<12; i++) {
     var block = $("<div>").addClass("row align-items-center");
     container.append(block);
-        var timeCol = $("<div>").addClass("col-md-2").css(["padding-bottom: .75rem; background-color: rgba(86, 61, 124, .15); border: 1px solid rgba(86, 61, 124, .2)"]);
+        var timeCol = $("<div>").addClass("col-md-2 time-block");
         /*padding-top: .75rem;
     padding-bottom: .75rem;
     background-color: rgba(86, 61, 124, .15);
     border: 1px solid rgba(86, 61, 124, .2);*/
         //.css(["width", "height", "color", "background-color"]);
-        var taskCol = $("<div>").addClass("col-md-8");
-        var saveCol = $("<div>").addClass("col-md-2");
+        var taskCol = $("<div>").addClass("col-md-8 description");
+        var saveCol = $("<div>").addClass("col-md-2 saveBtn");
         block.append(timeCol); //.text("fu");
         block.append(taskCol);
         block.append(saveCol);
