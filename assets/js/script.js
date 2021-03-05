@@ -1,12 +1,29 @@
+var container = $(".container");
+
 // add date with this variable from Luxon, adding the "luxon." to DateTime.now
 var dt = luxon.DateTime.now();
 // format the dt
 dt.toLocaleString(luxon.DateTime.DATETIME_FULL);
 // add the formatted dt to the currentDay <p>
 $("#currentDay").text(dt.toLocaleString(luxon.DateTime.DATETIME_FULL));
+
 //id="currentDay" class="lead"
 // create a row for each time block, color coded for past, present, future 
-
+for (i=0; i<12; i++) {
+    var block = $("<div>").addClass("row align-items-center");
+    container.append(block);
+        var timeCol = $("<div>").addClass("col-md-2").css(["padding-bottom: .75rem; background-color: rgba(86, 61, 124, .15); border: 1px solid rgba(86, 61, 124, .2)"]);
+        /*padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);*/
+        //.css(["width", "height", "color", "background-color"]);
+        var taskCol = $("<div>").addClass("col-md-8");
+        var saveCol = $("<div>").addClass("col-md-2");
+        block.append(timeCol); //.text("fu");
+        block.append(taskCol);
+        block.append(saveCol);
+    }
 // click a time block to enter an event
 
 // click save to save text in local storage so that it persists
